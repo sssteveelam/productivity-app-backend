@@ -6,6 +6,7 @@ const connectDB = require("./config/db");
 // Import routes
 const authRoutes = require("./routes/authRoutes");
 const quoteRoutes = require("./routes/quoteRoutes");
+const taskRoutes = require("./routes/taskRoutes");
 // ---------------------------------------------
 // Load biến môi trường từ file .env
 dotenv.config();
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 // -------------------------------
 app.use("/api/auth", authRoutes); // Tất cả các route trong authRoutes sẽ có tiền tố /api/auth
 app.use("/api/quote", quoteRoutes);
+app.use("/api/tasks", taskRoutes);
 // -------------------------------
 const PORT = process.env.PORT || 5001; // Sử dụng cổng từ .env hoặc mặc định 5001
 
